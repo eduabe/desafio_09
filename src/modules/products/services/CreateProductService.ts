@@ -21,7 +21,6 @@ class CreateProductService {
     const productWithSameName = await this.productsRepository.findByName(name);
     
     if(!!productWithSameName){
-      console.log(productWithSameName);
       throw new AppError('Produto com nome repetido');
     }
 

@@ -21,7 +21,6 @@ class ProductsRepository implements IProductsRepository {
     price,
     quantity,
   }: ICreateProductDTO): Promise<Product> {
-    console.log(`${name} - ${price} - ${quantity}`);
     const product = this.ormRepository.create({
       name,
       price,
@@ -36,10 +35,8 @@ class ProductsRepository implements IProductsRepository {
 
   public async findByName(name: string): Promise<Product | undefined> {
 
-    console.log(name);
     const product = await this.ormRepository.findOne({where: {name}});
     
-    console.log(product);
     return product;
   }
 
