@@ -27,7 +27,9 @@ export class CreateOrdersProducts1614213883275 implements MigrationInterface {
                     },
                     {
                         name: 'price',
-                        type: 'double precision',
+                        type: 'decimal',
+                        precision:10,
+                        scale: 2
                     },
                     {
                         name: 'quantity',
