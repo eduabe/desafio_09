@@ -27,7 +27,9 @@ class Order {
   })
   customer: Customer;
 
-  @OneToMany(()=> OrdersProducts, orderProduct => orderProduct.order)
+  @OneToMany(()=> OrdersProducts, orderProduct => orderProduct.order,{
+    cascade:['insert']
+  })
   order_products: OrdersProducts[];
 
   @CreateDateColumn()
